@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mã Hamming 7,4 - Encoder và Decoder</title>
+    <script src="hamming1.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #4a90e2;
+            border-radius: 12px;
+            padding: 30px 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: #4a90e2;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .output {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #eaf4ff;
+            border-left: 4px solid #4a90e2;
+            border-radius: 6px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mã Hamming 7,4 - Encoder và Decoder</h1>
+
+        <h3>Mã hóa dữ liệu:</h3>
+        <label for="dataInput">Nhập dữ liệu 4 bit (D4, D3, D2, D1):</label>
+        <input type="text" id="dataInput" value="1011" maxlength="4" oninput="encodeData()">
+        <div id="encodedResult" class="output"></div>
+
+        <h3>Giải mã và Kiểm tra lỗi:</h3>
+        <label for="encodedInput">Nhập mã Hamming 7 bit (bao gồm cả bit kiểm tra):</label>
+        <input type="text" id="encodedInput" value="1010110" maxlength="7" oninput="decodeData()">
+        <div id="decodedResult" class="output"></div>
+        <div id="errorDetectionResult" class="output"></div>
+    </div>
+</body>
+</html>
